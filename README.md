@@ -1,6 +1,6 @@
 # ajax  
 
-### ajax代码  
+### js代码  
 ```javascript  
 function objToStr(data) {
     data.t = new Date().getTime()                //使每次的URL不同
