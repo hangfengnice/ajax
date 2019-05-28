@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='./myAjax2.js'>
+    export default {
+        
+    }
+    </script>
+    <script>
+        window.onload = function () {
+            var Btn = document.querySelector("button");
+            Btn.onclick = function () {
+                ajax("post",'./08-ajax-post.php',{name:"hangf",age:12},3000,function(xml){
+                    console.log(xml.responseText)
+                },function(){
+                    console.log("error")
+                })
+                // var xml = new XMLHttpRequest()
+
+                // if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                //     var xml = new XMLHttpRequest();
+                // } else { // code for IE6, IE5
+                //     var xml = new ActiveXObject("Microsoft.XMLHTTP");
+                // }
+                // xml.open('post', './08-ajax-post.php?t=' + (new Date().getTime()))
+
+                // xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                // xml.send("name=Bill&age=16");
+
+                // xml.onreadystatechange = function () {
+                //     if (xml.readyState == 4) {
+                //         if (xml.status == 200) {
+                //             console.log(xml.responseText)
+                //         } else {
+                //             console.log("error")
+
+                //         }
+                //     }
+                // }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <button>发送请求</button>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <!-- <script src='../node_modules/jquery/dist/jquery.js'></script> -->
+    <script src='./ajax.js'></script>
+    <script>
+        window.onload = function () {
+            var Btn = document.querySelector("button");
+            Btn.onclick = function () {
+                //   $.ajax({
+                //       type: 'get',
+                //       url: "./09-ajax-jquery.php",
+                //       data:'name=hangfeng&age:12',
+                //       success:function(xml){
+                //           console.log(xml)
+                //         //   console.log(xml.responseText)
+                //       },
+                //       error:function(xml){
+                //           console.log(xml.status)
+                //       }
+                //   })
+
+                ajax({
+                    type: "GET",
+                    url: './ajax.php',
+                    data: {
+                        name: 'hangfeng',
+                        age: 18
+                    },
+                    timeout: 3000,
+                    success: function (xml) {
+                        console.log(xml.responseText)
+                    },
+                    error: function (xml) {
+                        console.log('error')
+                    }
+                })
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <button>发送请求</button>
+</body>
+
+</html>

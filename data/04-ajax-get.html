@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var Btn = document.querySelector("button");
+            Btn.onclick = function () {
+                var xml = new XMLHttpRequest()
+                xml.open('get', './04-ajax-get.php')
+                xml.send()
+                xml.onreadystatechange = function () {
+                    if (xml.readyState == 4) {
+                        if (xml.status == 200) {
+                            console.log('ok')
+                        }
+                    }
+                }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button>发送请求</button>
+</body>
+
+</html>
